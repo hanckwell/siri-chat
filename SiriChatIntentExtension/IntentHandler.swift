@@ -15,11 +15,11 @@ class IntentHandler: INExtension, INSendMessageIntentHandling  {
         return self
     }
     
-    func handle(sendMessage intent: INSendMessageIntent, completion: @escaping (INSendMessageIntentResponse) -> Swift.Void){
+    func handle(intent: INSendMessageIntent, completion: @escaping (INSendMessageIntentResponse) -> Swift.Void){
         
     }
     
-    func resolveRecipients(forSendMessage intent: INSendMessageIntent, with completion: @escaping ([INPersonResolutionResult]) -> Void) {
+    func resolveRecipients(for intent: INSendMessageIntent, with completion: @escaping ([INPersonResolutionResult]) -> Void) {
         let apiHandler = SiriChatApiHelper()
         if let requestedRecipients = intent.recipients, requestedRecipients.count > 0 {//Step - 1
             var requestedPeople = [Person]()
